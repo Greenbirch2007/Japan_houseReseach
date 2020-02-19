@@ -10,7 +10,7 @@ from selenium import webdriver
 
 def get_first_page():
 
-    url = 'https://realestate.yahoo.co.jp/used/mansion/search/06/27/271/'
+    url = 'https://realestate.yahoo.co.jp/used/mansion/search/03/13/?geo%5B%5D=13101&geo%5B%5D=13102&geo%5B%5D=13103&geo%5B%5D=13104&geo%5B%5D=13105&geo%5B%5D=13113&geo%5B%5D=13107&geo%5B%5D=13121&geo%5B%5D=13109&geo%5B%5D=13111'
     driver.get(url)
     time.sleep(3)
 
@@ -24,7 +24,7 @@ def get_first_page():
 # 把首页和翻页处理？
 
 def next_page():
-    for i in range(1,70):  # selenium 循环翻页成功！
+    for i in range(1,111):  # selenium 循环翻页成功！
         driver.find_element_by_xpath('//*[@id="nextBuilding"]').click()
         time.sleep(5)
         html = driver.page_source
@@ -51,7 +51,7 @@ def insertDB(content):
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor()
     try:
-        cursor.executemany('insert into osaka_oldflat (link) values (%s)', content)
+        cursor.executemany('insert into tokyo_oldflat (link) values (%s)', content)
         connection.commit()
         connection.close()
         print('向MySQL中添加数据成功！')
@@ -81,10 +81,10 @@ if __name__ == '__main__':
 
 
 # #
-# create table osaka_oldflat(
+# create table tokyo_oldflat(
 # id int not null primary key auto_increment,
 # link text
 # ) engine=InnoDB  charset=utf8;
 
 
-# drop table osaka_oldflat;
+# drop table tokyo_oldflat;
