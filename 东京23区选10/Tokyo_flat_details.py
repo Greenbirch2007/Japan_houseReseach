@@ -75,8 +75,8 @@ def Python_sel_Mysql():
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     cur = connection.cursor()
     #sql 语句
-    for i in range(1,1762):
-        sql = 'select link from osaka_oldflat where id = %s ' % i
+    for i in range(1,999):
+        sql = 'select link from tokyo_oldflat where id = %s ' % i
         # #执行sql语句
         cur.execute(sql)
         # #获取所有记录列表
@@ -90,7 +90,7 @@ def insertDB(content):
 
     cursor = connection.cursor()
     try:
-        cursor.executemany('insert into osaka_oldflat_detail (f_fullPrice,location,communication,layout,f_squre,height,light_dire,houseHistory) values (%s,%s,%s,%s,%s,%s,%s,%s)', content)
+        cursor.executemany('insert into tokyo_oldflat_detail (f_fullPrice,location,communication,layout,f_squre,height,light_dire,houseHistory) values (%s,%s,%s,%s,%s,%s,%s,%s)', content)
         connection.commit()
         connection.close()
         print('向MySQL中添加数据成功！')
@@ -116,7 +116,7 @@ if __name__ == '__main__':
 
 
 # f_fullPrice,location,communication,layout,f_squre,height,light_dire,houseHistory
-# create table osaka_oldflat_detail(
+# create table tokyo_oldflat_detail(
 # id int not null primary key auto_increment,
 # f_fullPrice varchar(80),
 # location varchar(80),
@@ -129,4 +129,4 @@ if __name__ == '__main__':
 # ) engine=InnoDB  charset=utf8;
 
 
-# drop table osaka_oldflat_detail;
+# drop table tokyo_oldflat_detail;

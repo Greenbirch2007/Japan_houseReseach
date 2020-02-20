@@ -9,8 +9,8 @@ from selenium import webdriver
 
 
 def get_first_page():
-
-    url = 'https://realestate.yahoo.co.jp/used/mansion/search/03/13/?geo%5B%5D=13101&geo%5B%5D=13102&geo%5B%5D=13103&geo%5B%5D=13104&geo%5B%5D=13105&geo%5B%5D=13113&geo%5B%5D=13107&geo%5B%5D=13121&geo%5B%5D=13109&geo%5B%5D=13111'
+    #url = 'https://realestate.yahoo.co.jp/used/mansion/search/03/13/?geo%5B%5D=13101&geo%5B%5D=13102&geo%5B%5D=13103&geo%5B%5D=13104&geo%5B%5D=13105&geo%5B%5D=13113&geo%5B%5D=13107&geo%5B%5D=13121&geo%5B%5D=13109&geo%5B%5D=13111'
+    url = 'https://realestate.yahoo.co.jp/used/mansion/search/?po%5B0%5D=Z0904'
     driver.get(url)
     time.sleep(3)
 

@@ -75,7 +75,7 @@ def Python_sel_Mysql():
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     cur = connection.cursor()
     #sql 语句
-    for i in range(1,1762):
+    for i in range(275,1762):
         sql = 'select link from osaka_oldflat where id = %s ' % i
         # #执行sql语句
         cur.execute(sql)
